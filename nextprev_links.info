@@ -1,0 +1,8 @@
+name = "Next Prev Links"
+description = "Prepares and outputs rel next and prev links in HTML head"
+package = SEO
+core = 6.x
+
+files[] = nextprev_links.module
+
+dependencies[] = views

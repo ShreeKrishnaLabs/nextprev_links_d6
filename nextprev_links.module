@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * 
+ * Main module file for Next Prev Links, contains core Drupal hook implementations
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function nextprev_links_views_api() {
+  return array('api' => '3.0');
+}
+/**
+ * @file
+ * 
+ * Views plugin implementations for Next Prev Links.
+ */
+
+/**
+ * Implements hook_views_plugins
+ */
+function nextprev_links_views_plugins() {
+  return array(
+    'pager' => array(
+      'nextprev_links' => array(
+        'title' => t('Paged output, full pager (with rel next and prev links)'),
+        'short title' => t('Full (rel links)'),
+        'help' => t('Paged output, full Drupal style (with rel next and prev links)'),
+        'handler' => 'nextprev_links_pager',
+        'help topic' => 'pager-nextprev',
+        'uses options' => TRUE,
+        'parent' => 'full',
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nextprev_links_theme($existing, $type, $theme, $path) {
+ 
+  return array(
+    'nextprev_links_pager' => array(
+      'arguments' => array('tags' => array(), 'element' => 0, 'parameters' => array()),
+	  'file' => 'nextprev_links.theme.inc',
+      ),
+    );
+
+}
