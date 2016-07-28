@@ -18,6 +18,8 @@ $variables['parameters'] = $parameters;
   $element = $variables['element'];
   $parameters = $variables['parameters'];
   global $pager_page_array, $pager_total;
+ // print_r($pager_page_array);
+  //print_r($pager_total);
    if ($pager_page_array[0] > 0) {
 
     // Add rel="prev".
